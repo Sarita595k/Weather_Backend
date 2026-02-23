@@ -5,6 +5,7 @@ import routes from "./route/userRoute.js"
 import router from "./route/favoriteRoute.js"
 
 import { limiter } from "./middleware/rateLimiter.js"
+import route from "./route/weatherRoute.js"
 // config the dotenv file 
 dotenv.config()
 
@@ -19,6 +20,8 @@ app.use("/api/user", routes)
 // getting favourite routes 
 app.use("/api/favorite", router)
 
+// get all the weather 
+app.use("/api/weather", route)
 // adding functionality that no one can make more request
 app.use(limiter);
 // testing route 
