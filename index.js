@@ -13,7 +13,13 @@ dotenv.config()
 // creating the app
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: [
+        "https://avsarweather.netlify.app"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+}));
 app.use(express.json())
 
 
