@@ -16,6 +16,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// adding functionality that no one can make more request
+app.use(limiter);
+
 // getting all user route 
 app.use("/api/user", routes)
 
@@ -24,8 +27,7 @@ app.use("/api/favorite", router)
 
 // get all the weather 
 app.use("/api/weather", route)
-// adding functionality that no one can make more request
-app.use(limiter);
+
 // testing route 
 app.get("/", (req, res) => [
     res.json({
