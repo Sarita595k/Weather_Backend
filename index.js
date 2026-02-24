@@ -1,5 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors"
 import { connectToDb } from "./config/config.js"
 import routes from "./route/userRoute.js"
 import router from "./route/favoriteRoute.js"
@@ -12,6 +13,7 @@ dotenv.config()
 // creating the app
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 // getting all user route 
