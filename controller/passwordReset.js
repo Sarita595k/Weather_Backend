@@ -10,7 +10,7 @@ export const forgotPassword = async (req, res) => {
 
     const token = Math.random().toString(36).substring(2, 15);
     user.resetPasswordToken = token;
-    user.resetPasswordExpire = Date.now() + 36000; // 1 hour
+    user.resetPasswordExpire = Date.now() + 36000;
     await user.save();
 
     const resetUrl = `https://avsarweather.netlify.app/reset-password/${token}`;
