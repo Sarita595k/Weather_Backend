@@ -18,7 +18,3 @@ export const generateMailOptions = (userEmail, resetUrl) => {
            <p>Link expires in 1 hour.</p>`,
     };
 };
-
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv'
-dotenv.config()
