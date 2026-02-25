@@ -3,13 +3,16 @@ import nodemailer from "nodemailer";
 
 export const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 587,      // TLS port
+    secure: false,  // false for TLS
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // App Password
+        pass: process.env.EMAIL_PASS, // Gmail App Password
     },
-    family: 4, // use IPv4
+    tls: {
+        rejectUnauthorized: false, // optional for testing
+    },
+    family: 4,       // <- important! forces IPv4
 });
 export const generateMailOptions = (userEmail, resetUrl) => {
     return {
