@@ -1,5 +1,5 @@
-import { UserDetails } from "../models/User.js";
 import { generateMailOptions, transporter } from "../middleware/nodemailer.js";
+import { UserDetails } from "../model/userModel.js";
 
 
 export const forgotPassword = async (req, res) => {
