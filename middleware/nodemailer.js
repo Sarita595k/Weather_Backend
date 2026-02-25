@@ -7,12 +7,12 @@ export const transporter = nodemailer.createTransport({
     secure: false,  // false for TLS
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // Gmail App Password
+        pass: process.env.EMAIL_PASS,
     },
     tls: {
-        rejectUnauthorized: false, // optional for testing
+        rejectUnauthorized: false,
     },
-    family: 4,       // <- important! forces IPv4
+    family: 4,
 });
 export const generateMailOptions = (userEmail, resetUrl) => {
     return {
