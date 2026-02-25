@@ -15,7 +15,8 @@ const userSchema = new mongoose.Schema({
     }, favorites: {
         type: [String],
         default: []
-    }
+    }, resetPasswordToken: String,
+    resetPasswordExpire: Date
 },
     { timestamps: true }
 )
