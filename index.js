@@ -13,14 +13,11 @@ dotenv.config()
 // creating the app
 const app = express()
 
+// Allow both local and deployed frontend
 app.use(cors({
-    origin: [
-        "https://avsarweather.netlify.app"
-    ],
-    methods: ["GET", "POST"],
-    credentials: true
+    origin: ["http://localhost:5173",
+        "https://avsarweather.netlify.app"]
 }));
-
 app.use(express.json())
 
 
