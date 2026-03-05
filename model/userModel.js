@@ -22,4 +22,5 @@ const userSchema = new mongoose.Schema({
     { timestamps: true }
 )
 
+// created model for schema designed 
 export const UserDetails = mongoose.model("UserDetails", userSchema)
